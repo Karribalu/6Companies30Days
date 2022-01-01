@@ -32,6 +32,41 @@ public List<List<String>> groupAnagrams(String[] strs) {
         System.out.println(groupAnagrams(input));
       
      }
+     
+     
+     
+     
+/*Given a string, Your task is to  complete the function encode that returns the run length encoded string for the given string.
+eg if the input string is “wwwwaaadexxxxxx”, then the function should return “w4a3d1e1x6″ */
+
+import java.util.*;
+public class MyClass {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.next();
+        StringBuilder str = new StringBuilder("");
+        char c = s.charAt(0);
+        int count = 1;
+        for(int i = 1;i < s.length();i++)
+        {
+            if(s.charAt(i) == c)
+                count++;
+            else
+            {
+                str.append(c);
+                str.append(count);
+                c = s.charAt(i);
+                count = 1;
+            }
+        }
+        str.append(c);
+        str.append(count);
+        System.out.println(str);
+    }
+}
+
+
+
       
 Expected Output
 [["bat"],["nat","tan"],["ate","eat","tea"]]
